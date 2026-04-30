@@ -807,6 +807,21 @@
       margin-top: 28px;
     }
 
+    .form-status {
+      min-height: 18px;
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 11px;
+      line-height: 1.35;
+    }
+
+    .form-status a {
+      color: var(--green-2);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
     .footer {
       padding: 24px clamp(24px, 5vw, 86px) 44px;
       font-family: var(--mono);
@@ -1169,6 +1184,7 @@
           <div class="form-actions">
             <button class="button primary" type="submit">Submit</button>
           </div>
+          <p class="form-status" id="form-status" aria-live="polite"></p>
         </form>
       </div>
     </section>
@@ -1284,10 +1300,11 @@
     document.getElementById("contact-form").addEventListener("submit", (event) => {
       event.preventDefault();
       const form = event.currentTarget;
-      const name = form.name.value.trim();
-      const email = form.email.value.trim();
-      const subjectValue = form.subject.value.trim();
-      const message = form.message.value.trim();
+      const status = document.getElementById("form-status");
+      const name = form.elements.name.value.trim();
+      const email = form.elements.email.value.trim();
+      const subjectValue = form.elements.subject.value.trim();
+      const message = form.elements.message.value.trim();
       const subject = encodeURIComponent(subjectValue || (name ? `Website enquiry from ${name}` : "Website enquiry"));
       const body = encodeURIComponent([
         message,
@@ -1296,7 +1313,14 @@
         name ? `Name: ${name}` : "",
         email ? `Email: ${email}` : ""
       ].filter(Boolean).join("\\n"));
-      window.location.href = `mailto:rubin.asaf01@gmail.com?subject=${subject}&body=${body}`;
+      const mailtoUrl = `mailto:rubin.asaf01@gmail.com?subject=${subject}&body=${body}`;
+      const mailLink = document.createElement("a");
+      mailLink.href = mailtoUrl;
+      mailLink.style.display = "none";
+      document.body.appendChild(mailLink);
+      mailLink.click();
+      mailLink.remove();
+      status.innerHTML = `Opening your email client. If nothing opens, email <a href="${mailtoUrl}">rubin.asaf01@gmail.com</a>.`;
     });
   </script>
 </body>
