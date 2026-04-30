@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Asaf Rubin | Leadership Advisory, Data Analytics & Governance Research</title>
+  <meta name="description" content="Asaf Rubin is a research professional focused on leadership advisory, data analytics, governance research, board advisory, CEO succession, and applied AI tools.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f4f1ee;
+      --paper-2: #ebe6e0;
+      --ink: #101014;
+      --muted: #68635f;
+      --soft: #d9d1c9;
+      --line: rgba(16, 16, 20, .16);
+      --green: #145d2b;
+      --green-2: #0f3f23;
+      --white: #fffdf9;
+      --shadow: 0 24px 70px rgba(20, 17, 15, .12);
+      --mono: "DM Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+      --serif: "Cormorant Garamond", Georgia, serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 82px;
+      scroll-snap-type: y mandatory;
+      background: var(--paper);
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(20, 93, 43, .08), transparent 28%),
+        linear-gradient(135deg, #f7f4f0 0%, #ede7e0 48%, #f3f0ec 100%);
+      font-family: var(--serif);
+      font-size: 18px;
+      line-height: 1.45;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .site-header {
+      position: fixed;
+      z-index: 50;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px clamp(22px, 4vw, 64px);
+      background: rgba(244, 241, 238, .78);
+      border-bottom: 1px solid rgba(16, 16, 20, .08);
+      backdrop-filter: blur(18px);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--green-2);
+    }
+
+    .brand img {
+      width: 47px;
+      height: 47px;
+      border-radius: 12px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, .12);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(18px, 3.4vw, 54px);
+      font-family: var(--serif);
+      font-size: clamp(16px, 1.25vw, 20px);
+      font-weight: 600;
+    }
+
+    .nav a {
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 2px;
+      height: 1px;
+      transform: scaleX(0);
+      transform-origin: left;
+      background: currentColor;
+      transition: transform .22s ease;
+    }
+
+    .nav a:hover::after,
+    .nav a.is-active::after {
+      transform: scaleX(1);
+    }
+
+    main {
+      padding-top: 82px;
+    }
+
+    .section {
+      position: relative;
+      min-height: calc(100svh - 82px);
+      padding: clamp(56px, 6vw, 86px) clamp(24px, 5vw, 86px);
+      display: grid;
+      align-items: center;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
+
+    .section-inner {
+      width: min(1280px, 100%);
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      margin: 0 0 22px;
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 24px;
+      font-size: clamp(50px, 4.7vw, 68px);
+      line-height: .9;
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin-bottom: 26px;
+      font-size: clamp(48px, 6vw, 88px);
+      line-height: .9;
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+      font-size: clamp(25px, 2.2vw, 36px);
+      line-height: 1;
+      font-weight: 600;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(300px, 430px) minmax(420px, 1fr);
+      gap: clamp(58px, 8vw, 112px);
+      align-items: center;
+    }
+
+    .portrait-wrap {
+      align-self: center;
+    }
+
+    .portrait {
+      width: min(100%, 360px);
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      object-position: center 18%;
+      border: 1.5px solid var(--ink);
+      border-radius: 50%;
+      background: var(--white);
+      box-shadow: none;
+    }
+
+    .quick-links {
+      width: min(100%, 360px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .icon-link {
+      width: 34px;
+      height: 34px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 9px;
+      background: var(--ink);
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .icon-link:hover {
+      transform: translateY(-2px);
+      background: var(--green);
+    }
+
+    .icon-link img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+      filter: invert(1);
+    }
+
+    .icon-text {
+      color: var(--white);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    .icon-text.rg sup {
+      font-size: 7px;
+      vertical-align: super;
+    }
+
+    .substack-mark {
+      width: 18px;
+      height: 18px;
+      position: relative;
+      display: block;
+    }
+
+    .substack-mark::before,
+    .substack-mark::after,
+    .substack-mark span {
+      content: "";
+      position: absolute;
+      left: 2px;
+      right: 2px;
+      height: 2px;
+      background: var(--white);
+    }
+
+    .substack-mark::before {
+      top: 1px;
+    }
+
+    .substack-mark span {
+      top: 6px;
+    }
+
+    .substack-mark::after {
+      top: 11px;
+      height: 7px;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 64%, 0 100%);
+    }
+
+    .hero-copy {
+      padding-bottom: 22px;
+    }
+
+    .role {
+      max-width: 520px;
+      margin-bottom: 48px;
+      font-size: clamp(24px, 2.15vw, 31px);
+      line-height: 1.12;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .credentials {
+      margin-bottom: 76px;
+      font-family: var(--mono);
+      font-size: 17px;
+      color: var(--muted);
+    }
+
+    .intro {
+      max-width: 590px;
+      font-size: clamp(22px, 1.8vw, 26px);
+      line-height: 1.16;
+      font-weight: 600;
+    }
+
+    .scroll-cue {
+      position: absolute;
+      left: 50%;
+      bottom: 28px;
+      width: 34px;
+      height: 42px;
+      transform: translateX(-50%);
+      display: grid;
+      place-items: center;
+      color: rgba(16, 16, 20, .42);
+      font-family: var(--mono);
+      font-size: 26px;
+      line-height: 1;
+      animation: cueFade 1.8s ease-in-out infinite;
+    }
+
+    .scroll-cue::before,
+    .scroll-cue::after {
+      content: "⌄";
+      position: absolute;
+    }
+
+    .scroll-cue::before {
+      top: 0;
+    }
+
+    .scroll-cue::after {
+      top: 14px;
+    }
+
+    @keyframes cueFade {
+      0%, 100% {
+        opacity: .32;
+        transform: translate(-50%, -2px);
+      }
+
+      50% {
+        opacity: .82;
+        transform: translate(-50%, 4px);
+      }
+    }
+
+    .chat-grid {
+      display: grid;
+      grid-template-columns: minmax(300px, 360px) minmax(720px, 1fr);
+      gap: clamp(32px, 5vw, 66px);
+      align-items: center;
+    }
+
+    .chat-copy h2 {
+      font-size: clamp(42px, 4.25vw, 62px);
+      max-width: 360px;
+    }
+
+    .chat-copy p {
+      max-width: 340px;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.24;
+      font-weight: 600;
+    }
+
+    .chat-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 36px;
+      padding: 8px 13px;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      font-family: var(--mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      transition: transform .2s ease, background .2s ease, color .2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .button.primary {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .button.primary:hover {
+      background: var(--green);
+      border-color: var(--green);
+    }
+
+    .chat-frame-shell {
+      height: min(690px, calc(100svh - 150px));
+      min-height: 610px;
+      overflow: hidden;
+      border: 1px solid rgba(16, 16, 20, .14);
+      border-radius: 28px;
+      background: #1f1f1f;
+      box-shadow: var(--shadow);
+    }
+
+    .chat-widget {
+      width: 100%;
+      height: 100%;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      background: #1f1f1f;
+      color: #f4f4f4;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    .chat-widget-header h3 {
+      margin: 0;
+      color: #f4f4f4;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 28px;
+      line-height: 1.08;
+      font-weight: 800;
+    }
+
+    .chat-widget-header p {
+      max-width: 760px;
+      margin: 10px 0 0;
+      color: #e8e8e8;
+      font-size: 14px;
+      line-height: 1.35;
+      font-weight: 400;
+    }
+
+    .chat-welcome {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: #303030;
+      color: #f4f4f4;
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .chat-log {
+      flex: 1;
+      min-height: 0;
+      overflow: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-right: 4px;
+    }
+
+    .chat-log::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .chat-log::-webkit-scrollbar-thumb {
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .22);
+    }
+
+    .chat-bubble {
+      width: min(760px, 100%);
+      padding: 13px 15px;
+      border-radius: 13px;
+      background: #303030;
+      color: #f4f4f4;
+      font-size: 14px;
+      line-height: 1.38;
+      white-space: pre-wrap;
+    }
+
+    .chat-bubble.user {
+      align-self: flex-end;
+      background: #5a5a5a;
+    }
+
+    .chat-bubble.bot {
+      align-self: flex-start;
+    }
+
+    .chat-bubble.pending {
+      color: #a8a8a8;
+    }
+
+    .chat-prompts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 14px;
+    }
+
+    .chat-prompts.is-hidden {
+      display: none;
+    }
+
+    .chat-prompt {
+      min-height: 42px;
+      padding: 10px 12px;
+      border: 0;
+      border-radius: 11px;
+      background: #303030;
+      color: #f4f4f4;
+      font: 500 14px/1.2 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      cursor: pointer;
+    }
+
+    .chat-prompt:hover {
+      background: #3a3a3a;
+    }
+
+    .chat-status {
+      min-height: 16px;
+      color: #a8a8a8;
+      font-size: 12px;
+    }
+
+    .chat-composer {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-height: 54px;
+      padding: 9px 12px 9px 18px;
+      border-radius: 18px;
+      background: #303030;
+    }
+
+    .chat-composer input {
+      flex: 1;
+      min-width: 0;
+      border: 0;
+      padding: 8px 0;
+      background: transparent;
+      color: #f4f4f4;
+      font: 400 14px/1.2 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      outline: 0;
+    }
+
+    .chat-composer input::placeholder {
+      color: #a2a2a2;
+    }
+
+    .chat-send {
+      width: 38px;
+      height: 38px;
+      flex: 0 0 38px;
+      border: 0;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: #fff;
+      color: #000;
+      cursor: pointer;
+    }
+
+    .chat-send:disabled {
+      opacity: .55;
+      cursor: not-allowed;
+    }
+
+    .chat-send svg {
+      width: 21px;
+      height: 21px;
+      stroke: currentColor;
+      stroke-width: 2.4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .section-heading-compact {
+      margin-bottom: 34px;
+      font-size: clamp(32px, 3.2vw, 48px);
+      line-height: 1.05;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .project-card {
+      min-height: 274px;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid rgba(16, 16, 20, .12);
+      background: rgba(255, 253, 249, .58);
+      transition: transform .22s ease, background .22s ease, box-shadow .22s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .project-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 18px;
+    }
+
+    .project-logo {
+      width: 66px;
+      height: 66px;
+      flex: 0 0 auto;
+      border-radius: 18px;
+      object-fit: cover;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, .09);
+    }
+
+    .project-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.24;
+      font-weight: 600;
+    }
+
+    .publications-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(34px, 5vw, 72px);
+      align-items: start;
+    }
+
+    .pub-group-title {
+      margin-bottom: 20px;
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+
+    .publication-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .publication {
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 18px;
+      padding: 18px 18px 18px 0;
+      border-top: 1px solid rgba(16, 16, 20, .09);
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+
+    .publication:hover {
+      transform: translateX(4px);
+      border-color: rgba(20, 93, 43, .28);
+      background: linear-gradient(90deg, rgba(255, 253, 249, .58), rgba(255, 253, 249, 0));
+    }
+
+    .publication:hover .pub-title,
+    .publication:focus-visible .pub-title {
+      color: var(--green);
+    }
+
+    .pub-year {
+      width: fit-content;
+      min-width: 46px;
+      height: 25px;
+      display: inline-grid;
+      place-items: center;
+      border: 1px solid rgba(20, 93, 43, .28);
+      border-radius: 999px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--green);
+      line-height: 1;
+      margin-top: 1px;
+    }
+
+    .pub-title {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 20px;
+      line-height: 1.12;
+      font-weight: 700;
+      transition: color .2s ease;
+    }
+
+    .pub-source {
+      display: block;
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.22;
+      font-weight: 600;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(330px, 480px) minmax(420px, 1fr);
+      gap: clamp(42px, 7vw, 96px);
+      align-items: start;
+    }
+
+    .contact-text p {
+      max-width: 430px;
+      color: var(--muted);
+      font-size: 23px;
+      line-height: 1.22;
+      font-weight: 600;
+    }
+
+    .contact-methods {
+      display: grid;
+      gap: 14px;
+      margin-top: 34px;
+      font-family: var(--mono);
+      font-size: 13px;
+    }
+
+    .contact-method {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--green-2);
+    }
+
+    .contact-method img {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+    }
+
+    .qr {
+      width: 150px;
+      margin-top: 24px;
+      border-radius: 18px;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, .12);
+    }
+
+    .contact-form {
+      padding: clamp(24px, 4vw, 44px);
+      border: 1px solid rgba(16, 16, 20, .12);
+      background: rgba(255, 253, 249, .62);
+      box-shadow: var(--shadow);
+    }
+
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 0;
+      border-bottom: 1px solid rgba(16, 16, 20, .28);
+      border-radius: 0;
+      padding: 9px 0 12px;
+      background: transparent;
+      color: var(--ink);
+      font: 600 21px/1.2 var(--serif);
+      outline: none;
+    }
+
+    textarea {
+      min-height: 160px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-bottom-color: var(--green);
+    }
+
+    .form-actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 28px;
+    }
+
+    .footer {
+      padding: 24px clamp(24px, 5vw, 86px) 44px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      border-top: 1px solid rgba(16, 16, 20, .1);
+    }
+
+    @media (max-width: 980px) {
+      .site-header {
+        height: auto;
+        align-items: flex-start;
+        gap: 18px;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 12px 22px;
+      }
+
+      main {
+        padding-top: 104px;
+      }
+
+      .hero-grid,
+      .chat-grid,
+      .publications-layout,
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .portrait {
+        width: min(360px, 100%);
+      }
+
+      .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .chat-frame-shell {
+        min-height: 620px;
+        height: 620px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      body {
+        font-size: 16px;
+      }
+
+      .site-header {
+        position: static;
+      }
+
+      main {
+        padding-top: 0;
+      }
+
+      .brand span {
+        display: none;
+      }
+
+      .nav {
+        font-size: 15px;
+      }
+
+      .section {
+        min-height: auto;
+        padding: 64px 22px;
+      }
+
+      .projects-grid,
+      .field-row {
+        grid-template-columns: 1fr;
+      }
+
+      .publication {
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+
+      .chat-frame-shell {
+        min-height: 560px;
+        height: 560px;
+        border-radius: 18px;
+      }
+
+      .footer {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#about" aria-label="Asaf Rubin home">
+      <img src="logos/asafrubin-icon.png" alt="">
+      <span>Asaf Rubin</span>
+    </a>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="#about" class="is-active">About</a>
+      <a href="#chatbot">CV Chatbot</a>
+      <a href="#projects">Projects</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section" id="about">
+      <div class="section-inner hero-grid">
+        <div class="portrait-wrap">
+          <img class="portrait" src="logos/Asaf Rubin Headshot.jpeg" alt="Asaf Rubin">
+          <div class="quick-links" aria-label="Profile links">
+            <a class="icon-link email-link" href="mailto:rubin.asaf01@gmail.com?subject=Website%20enquiry" aria-label="Email Asaf Rubin">
+              <img src="logos/email.png" alt="">
+            </a>
+            <a class="icon-link" href="https://wa.me/447541459799" aria-label="Message Asaf Rubin on WhatsApp">
+              <img src="logos/phone-call.png" alt="">
+            </a>
+            <a class="icon-link" href="https://www.linkedin.com/in/asaf-rubin-phd-mba-21291466" aria-label="Asaf Rubin on LinkedIn">
+              <img src="logos/linkedin.png" alt="">
+            </a>
+            <a class="icon-link" href="https://github.com/asafrubin00" aria-label="Asaf Rubin on GitHub">
+              <img src="logos/github-sign.png" alt="">
+            </a>
+            <a class="icon-link" href="https://www.researchgate.net/profile/Asaf-Rubin?ev=hdr_xprf" aria-label="Asaf Rubin on ResearchGate">
+              <span class="icon-text rg">R<sup>G</sup></span>
+            </a>
+            <a class="icon-link" href="https://asafrubin.substack.com/" aria-label="Asaf Rubin on Substack">
+              <span class="substack-mark"><span></span></span>
+            </a>
+          </div>
+        </div>
+        <div class="hero-copy">
+          <h1>Asaf Rubin</h1>
+          <p class="role">Leadership Advisory, Data Analytics &amp; Governance Research</p>
+          <p class="credentials">PhD | MBA</p>
+          <p class="intro">Research professional with a background in board &amp; CEO advisory. Currently based in London.</p>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#chatbot" aria-label="Scroll to CV Chatbot"></a>
+    </section>
+
+    <section class="section" id="chatbot">
+      <div class="section-inner chat-grid">
+        <div class="chat-copy">
+          <p class="eyebrow">CV Chatbot</p>
+          <h2>Ask the CV directly.</h2>
+          <p>Use the embedded chatbot to explore my background, research, advisory experience, and projects without digging through a static document.</p>
+          <div class="chat-actions">
+            <a class="button primary" href="https://asaf-cv-chatbot.vercel.app/">Open full screen</a>
+            <a class="button" href="#contact">Contact me</a>
+          </div>
+        </div>
+        <div class="chat-frame-shell">
+          <div class="chat-widget" aria-label="Asaf Rubin CV Chatbot">
+            <div class="chat-widget-header">
+              <h3>Asaf Rubin, according to a small pile of documents.</h3>
+              <p>Ask about my background, experience, research, interests, and what I might be useful for next.</p>
+            </div>
+            <div class="chat-welcome">Hello. I am AsafBot, a suspiciously punctual approximation of Asaf Rubin. Ask me recruiter questions, research questions, pronunciation questions, or the classic: "what exactly are you trying to do with your life?"</div>
+            <div class="chat-log" id="chat-log" aria-live="polite"></div>
+            <div class="chat-prompts" id="chat-prompts">
+              <button class="chat-prompt" type="button">How do you pronounce your name?</button>
+              <button class="chat-prompt" type="button">What did you do at Russell Reynolds Associates?</button>
+              <button class="chat-prompt" type="button">Give me the 30-second summary of your background.</button>
+              <button class="chat-prompt" type="button">What kind of roles are you looking for next?</button>
+            </div>
+            <div class="chat-status" id="chat-status"></div>
+            <div class="chat-composer">
+              <input id="chat-input" placeholder="Ask anything" autocomplete="off">
+              <button class="chat-send" id="chat-send" type="button" aria-label="Send">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 19V5"></path>
+                  <path d="M5 12l7-7 7 7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#projects" aria-label="Scroll to Projects"></a>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="section-inner">
+        <h2 class="section-heading-compact">My projects: Built around governance, data and decision-making.</h2>
+        <div class="projects-grid">
+          <a class="project-card" href="https://boardcraft-eight.vercel.app/play">
+            <div class="project-top">
+              <img class="project-logo" src="logos/boardcraft-icon.png" alt="BoardCraft logo">
+            </div>
+            <div>
+              <h3>BoardCraft</h3>
+              <p>A board strategy and corporate governance game, playable in your browser.</p>
+            </div>
+          </a>
+          <a class="project-card" href="https://ceo-turnover-index.vercel.app/">
+            <div class="project-top">
+              <img class="project-logo" src="logos/ceoturnover-icon.png" alt="CEO Turnover Index logo">
+            </div>
+            <div>
+              <h3>CEO Turnover Index</h3>
+              <p>Analytics dashboard tracking global CEO turnover, built on Russell Reynolds data.</p>
+            </div>
+          </a>
+          <a class="project-card" href="https://proxy-wars-dissent-tracker.vercel.app/">
+            <div class="project-top">
+              <img class="project-logo" src="logos/proxywars-icon.png" alt="Proxy Wars logo">
+            </div>
+            <div>
+              <h3>Proxy Wars</h3>
+              <p>Shareholder dissent tracker: FTSE 100 AGM votes against management, live.</p>
+            </div>
+          </a>
+          <a class="project-card" href="https://crowdcallr.vercel.app/">
+            <div class="project-top">
+              <img class="project-logo" src="logos/crowdcallr-icon.png" alt="CrowdCallr logo">
+            </div>
+            <div>
+              <h3>CrowdCallr</h3>
+              <p>Research crowdsourcing platform with prediction market mechanics, inspired by my PhD.</p>
+            </div>
+          </a>
+          <a class="project-card" href="https://asaf-cv-chatbot.vercel.app/">
+            <div class="project-top">
+              <img class="project-logo" src="logos/cvchatbot-icon.png" alt="CV Chatbot logo">
+            </div>
+            <div>
+              <h3>CV Chatbot</h3>
+              <p>AI chatbot trained on my CV. The most efficient way to get to know me.</p>
+            </div>
+          </a>
+          <a class="project-card" href="https://github.com/asafrubin00/onenote2notion">
+            <div class="project-top">
+              <img class="project-logo" src="logos/onenote2notion-icon.png" alt="OneNote2Notion logo">
+            </div>
+            <div>
+              <h3>OneNote2Notion</h3>
+              <p>Moves all your OneNote notes into Notion automatically, including images.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#publications" aria-label="Scroll to Publications"></a>
+    </section>
+
+    <section class="section" id="publications">
+      <div class="section-inner">
+        <h2 class="section-heading-compact">My publications: research and thought leadership.</h2>
+        <div class="publications-layout">
+          <div>
+            <div class="pub-group-title">Academic Research</div>
+            <div class="publication-list">
+              <a class="publication" href="https://www.researchgate.net/publication/343735897">
+                <span class="pub-year">2020</span>
+                <span>
+                  <span class="pub-title">Propensity to adopt new technologies and research productivity in a developing country context</span>
+                  <span class="pub-source">International Journal of Business Innovation and Research, 22(4), 546-568</span>
+                </span>
+              </a>
+              <a class="publication" href="https://www.researchgate.net/publication/335551637">
+                <span class="pub-year">2019</span>
+                <span>
+                  <span class="pub-title">Entrepreneurial orientation, technological propensity and academic research productivity</span>
+                  <span class="pub-source">Heliyon, 5(8), e02328</span>
+                </span>
+              </a>
+              <a class="publication" href="https://wiredspace.wits.ac.za/items/9104408c-822e-4bf2-9330-c56c2e08ffc0">
+                <span class="pub-year">2018</span>
+                <span>
+                  <span class="pub-title">Knowledge management determinants of breakthrough research productivity</span>
+                  <span class="pub-source">PhD thesis, University of the Witwatersrand</span>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div>
+            <div class="pub-group-title">Thought Leadership</div>
+            <div class="publication-list">
+              <a class="publication" href="https://www.russellreynolds.com/en/insights/reports-surveys/global-ceo-turnover-index">
+                <span class="pub-year">2024</span>
+                <span>
+                  <span class="pub-title">Global CEO Turnover Index</span>
+                  <span class="pub-source">Russell Reynolds Associates, co-author</span>
+                </span>
+              </a>
+              <a class="publication" href="https://www.russellreynolds.com/en/insights/articles/how-to-structure-an-effective-pre-ipo-board-in-the-uk">
+                <span class="pub-year">2022</span>
+                <span>
+                  <span class="pub-title">How to Structure an Effective Pre-IPO Board in the UK</span>
+                  <span class="pub-source">Russell Reynolds Associates, co-author</span>
+                </span>
+              </a>
+              <a class="publication" href="https://www.russellreynolds.com/en/insights/articles/the-role-of-the-senior-independent-director">
+                <span class="pub-year">2021</span>
+                <span>
+                  <span class="pub-title">The Role of the Senior Independent Director (UK)</span>
+                  <span class="pub-source">Russell Reynolds Associates, co-author</span>
+                </span>
+              </a>
+              <a class="publication" href="https://www.russellreynolds.com/en/insights/articles/what-makes-a-successful-board-chair-defining-their-attributes-and-transition-preparedness">
+                <span class="pub-year">2020</span>
+                <span>
+                  <span class="pub-title">What Makes A Successful Board Chair?</span>
+                  <span class="pub-source">Russell Reynolds Associates, co-author</span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#contact" aria-label="Scroll to Contact"></a>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="section-inner contact-layout">
+        <div class="contact-text">
+          <h2 class="section-heading-compact">Contact</h2>
+          <p>For governance research, board advisory, analytics collaborations, or questions about the projects above, send a note directly.</p>
+          <div class="contact-methods">
+            <a class="contact-method email-link" href="mailto:rubin.asaf01@gmail.com?subject=Website%20enquiry">
+              <img src="logos/email.png" alt="">
+              <span>rubin.asaf01@gmail.com</span>
+            </a>
+            <a class="contact-method" href="https://wa.me/447541459799">
+              <img src="logos/telephone-symbol-button.png" alt="">
+              <span>WhatsApp: +44 7541 459799</span>
+            </a>
+            <a class="contact-method" href="https://www.linkedin.com/in/asaf-rubin-phd-mba-21291466">
+              <img src="logos/linkedin.png" alt="">
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
+        <form class="contact-form" id="contact-form">
+          <div class="field-row">
+            <p>
+              <label for="name">Name</label>
+              <input id="name" name="name" autocomplete="name">
+            </p>
+            <p>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email">
+            </p>
+          </div>
+          <p>
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject">
+          </p>
+          <p>
+            <label for="message">Message</label>
+            <textarea id="message" name="message"></textarea>
+          </p>
+          <div class="form-actions">
+            <button class="button primary" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 Asaf Rubin</span>
+    <span>Leadership Advisory / Data Analytics / Governance Research</span>
+  </footer>
+
+  <script>
+    const navLinks = [...document.querySelectorAll(".nav a")];
+    const sections = navLinks.map((link) => document.querySelector(link.getAttribute("href"))).filter(Boolean);
+
+    function setActiveSection() {
+      const viewportAnchor = window.scrollY + window.innerHeight * 0.48;
+      const visible = sections.reduce((closest, section) => {
+        const distance = Math.abs(section.offsetTop - viewportAnchor);
+        return distance < closest.distance ? { section, distance } : closest;
+      }, { section: sections[0], distance: Infinity }).section;
+      navLinks.forEach((link) => {
+        link.classList.toggle("is-active", link.getAttribute("href") === `#${visible.id}`);
+      });
+    }
+
+    window.addEventListener("scroll", setActiveSection, { passive: true });
+    window.addEventListener("hashchange", setActiveSection);
+    setActiveSection();
+
+    const chatLog = document.getElementById("chat-log");
+    const chatInput = document.getElementById("chat-input");
+    const chatSend = document.getElementById("chat-send");
+    const chatStatus = document.getElementById("chat-status");
+    const chatPrompts = document.getElementById("chat-prompts");
+    const chatSessionId = crypto.randomUUID();
+    const chatHistory = [];
+    const maxChatHistory = 8;
+
+    function addChatBubble(role, text, extraClass = "") {
+      const bubble = document.createElement("div");
+      bubble.className = `chat-bubble ${role} ${extraClass}`.trim();
+      bubble.textContent = text;
+      chatLog.appendChild(bubble);
+      chatLog.scrollTop = chatLog.scrollHeight;
+      return bubble;
+    }
+
+    function rememberChat(role, content) {
+      chatHistory.push({ role, content });
+      if (chatHistory.length > maxChatHistory) {
+        chatHistory.splice(0, chatHistory.length - maxChatHistory);
+      }
+    }
+
+    function setChatBusy(isBusy) {
+      chatSend.disabled = isBusy;
+      chatInput.disabled = isBusy;
+      chatStatus.textContent = isBusy ? "Thinking..." : "";
+    }
+
+    async function sendChatMessage(message = chatInput.value.trim()) {
+      if (!message) return;
+      chatPrompts.classList.add("is-hidden");
+      addChatBubble("user", message);
+      rememberChat("user", message);
+      chatInput.value = "";
+      setChatBusy(true);
+      const pending = addChatBubble("bot", "Thinking...", "pending");
+
+      try {
+        const response = await fetch("https://asaf-cv-chatbot.vercel.app/api/chat", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "x-session-id": chatSessionId
+          },
+          body: JSON.stringify({
+            message,
+            history: chatHistory.slice(0, -1)
+          })
+        });
+
+        if (!response.ok) throw new Error(`Chat API returned ${response.status}`);
+        const data = await response.json();
+        const reply = data.reply || "(No reply returned.)";
+        pending.remove();
+        addChatBubble("bot", reply);
+        rememberChat("assistant", reply);
+      } catch (error) {
+        pending.remove();
+        addChatBubble("bot", "Something broke on my side. Please try the full-screen chatbot, or send Asaf a note directly.");
+      } finally {
+        setChatBusy(false);
+        chatInput.focus();
+      }
+    }
+
+    chatSend.addEventListener("click", () => sendChatMessage());
+    chatInput.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") sendChatMessage();
+    });
+    document.querySelectorAll(".chat-prompt").forEach((button) => {
+      button.addEventListener("click", () => sendChatMessage(button.textContent.trim()));
+    });
+
+    document.querySelectorAll(".email-link").forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        window.location.href = link.href;
+      });
+    });
+
+    document.getElementById("contact-form").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const subjectValue = form.subject.value.trim();
+      const message = form.message.value.trim();
+      const subject = encodeURIComponent(subjectValue || (name ? `Website enquiry from ${name}` : "Website enquiry"));
+      const body = encodeURIComponent([
+        message,
+        "",
+        subjectValue ? `Subject: ${subjectValue}` : "",
+        name ? `Name: ${name}` : "",
+        email ? `Email: ${email}` : ""
+      ].filter(Boolean).join("\\n"));
+      window.location.href = `mailto:rubin.asaf01@gmail.com?subject=${subject}&body=${body}`;
+    });
+  </script>
+</body>
+</html>

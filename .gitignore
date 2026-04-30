@@ -1,0 +1,11 @@
+.DS_Store
+~$*
+*.pptx
+*.pdf
+*.png
+*.jpg
+*.jpeg
+!logos/*.png
+!logos/*.jpg
+!logos/*.jpeg
+Logos/
