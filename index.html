@@ -872,16 +872,29 @@
     }
 
     @media (max-width: 680px) {
+      html {
+        scroll-padding-top: 0;
+        scroll-snap-type: none;
+      }
+
       body {
         font-size: 16px;
       }
 
       .site-header {
         position: static;
+        padding: 14px 18px 12px;
+        align-items: center;
       }
 
       main {
         padding-top: 0;
+      }
+
+      .brand img {
+        width: 36px;
+        height: 36px;
+        border-radius: 9px;
       }
 
       .brand span {
@@ -889,12 +902,111 @@
       }
 
       .nav {
-        font-size: 15px;
+        flex: 1;
+        justify-content: flex-end;
+        gap: 7px 12px;
+        font-size: 12px;
+        line-height: 1;
+      }
+
+      .nav a {
+        padding: 4px 0;
       }
 
       .section {
         min-height: auto;
-        padding: 64px 22px;
+        padding: 54px 22px 68px;
+        display: block;
+        scroll-snap-align: none;
+      }
+
+      .hero-grid,
+      .chat-grid,
+      .publications-layout,
+      .contact-layout {
+        gap: 30px;
+      }
+
+      .portrait-wrap {
+        display: grid;
+        justify-items: center;
+      }
+
+      .portrait {
+        width: min(265px, 82vw);
+      }
+
+      .quick-links {
+        width: min(265px, 82vw);
+        gap: 9px;
+        margin-top: 16px;
+      }
+
+      .icon-link {
+        width: 29px;
+        height: 29px;
+        border-radius: 8px;
+      }
+
+      .icon-link img {
+        width: 17px;
+        height: 17px;
+      }
+
+      .hero-copy {
+        padding-bottom: 0;
+        text-align: left;
+      }
+
+      h1 {
+        margin: 24px 0 14px;
+        font-size: 46px;
+      }
+
+      .role {
+        margin-bottom: 24px;
+        font-size: 24px;
+        line-height: 1.12;
+      }
+
+      .credentials {
+        margin-bottom: 34px;
+        font-size: 13px;
+      }
+
+      .intro {
+        font-size: 20px;
+        line-height: 1.16;
+      }
+
+      .eyebrow {
+        margin-bottom: 14px;
+        font-size: 11px;
+      }
+
+      .section-heading-compact {
+        white-space: normal;
+        margin-bottom: 24px;
+        font-size: 31px;
+        line-height: 1.08;
+      }
+
+      .chat-copy h2 {
+        max-width: none;
+        margin-bottom: 18px;
+        font-size: 44px;
+        line-height: .95;
+      }
+
+      .chat-copy p {
+        max-width: none;
+        font-size: 18px;
+      }
+
+      .button {
+        min-height: 34px;
+        padding: 8px 12px;
+        font-size: 10px;
       }
 
       .projects-grid,
@@ -902,19 +1014,101 @@
         grid-template-columns: 1fr;
       }
 
+      .project-card {
+        min-height: 205px;
+        padding: 22px;
+      }
+
+      .project-logo {
+        width: 52px;
+        height: 52px;
+        border-radius: 14px;
+      }
+
+      .project-card h3 {
+        font-size: 27px;
+      }
+
+      .project-card p {
+        font-size: 16px;
+      }
+
+      .pub-group-title {
+        margin-top: 10px;
+      }
+
       .publication {
         grid-template-columns: 1fr;
-        gap: 5px;
+        gap: 9px;
+        padding: 16px 0;
+      }
+
+      .pub-title {
+        font-size: 18px;
+      }
+
+      .pub-source {
+        font-size: 14px;
       }
 
       .chat-frame-shell {
-        min-height: 560px;
-        height: 560px;
+        min-height: 590px;
+        height: 590px;
         border-radius: 18px;
+      }
+
+      .chat-widget {
+        padding: 18px;
+        gap: 13px;
+      }
+
+      .chat-widget-header h3 {
+        font-size: 22px;
+      }
+
+      .chat-widget-header p,
+      .chat-welcome,
+      .chat-bubble,
+      .chat-prompt,
+      .chat-composer input {
+        font-size: 13px;
+      }
+
+      .chat-prompts {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .contact-text p {
+        max-width: none;
+        font-size: 18px;
+      }
+
+      .contact-methods {
+        font-size: 11px;
+      }
+
+      .contact-form {
+        padding: 22px;
+      }
+
+      input,
+      textarea {
+        font-size: 18px;
+      }
+
+      textarea {
+        min-height: 130px;
+      }
+
+      .scroll-cue {
+        display: none;
       }
 
       .footer {
         flex-direction: column;
+        padding: 22px;
+        font-size: 10px;
       }
     }
   </style>
