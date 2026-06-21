@@ -614,6 +614,16 @@
       box-shadow: var(--shadow);
     }
 
+    .project-card:not(a) {
+      cursor: default;
+    }
+
+    .project-card:not(a):hover {
+      transform: none;
+      background: rgba(255, 253, 249, .58);
+      box-shadow: none;
+    }
+
     .project-top {
       display: flex;
       align-items: flex-start;
@@ -630,8 +640,15 @@
       box-shadow: 0 14px 30px rgba(0, 0, 0, .09);
     }
 
-    .project-card:nth-child(5) {
-      grid-column: 2;
+    .project-logo-placeholder {
+      display: grid;
+      place-items: center;
+      background: rgba(16, 16, 20, .08);
+      color: rgba(16, 16, 20, .45);
+      font-family: var(--mono);
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 400;
     }
 
     .project-card h3 {
@@ -846,9 +863,6 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
-      .project-card:nth-child(5) {
-        grid-column: auto;
-      }
     }
 
     @media (max-width: 980px) {
@@ -1290,6 +1304,15 @@
               <p>Moves all your OneNote notes into Notion automatically, including images.</p>
             </div>
           </a>
+          <div class="project-card" aria-label="Coming soon">
+            <div class="project-top">
+              <span class="project-logo project-logo-placeholder" aria-hidden="true">+</span>
+            </div>
+            <div>
+              <h3>Coming soon</h3>
+              <p>Another governance, data, or decision-making project is on the way.</p>
+            </div>
+          </div>
         </div>
       </div>
       <a class="scroll-cue" href="#publications" aria-label="Scroll to Publications"></a>
