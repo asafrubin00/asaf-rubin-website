@@ -585,8 +585,8 @@
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
     }
 
     .section-heading-compact {
@@ -598,8 +598,8 @@
     }
 
     .project-card {
-      min-height: 274px;
-      padding: 26px;
+      min-height: 236px;
+      padding: 22px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -622,18 +622,26 @@
     }
 
     .project-logo {
-      width: 66px;
-      height: 66px;
+      width: 58px;
+      height: 58px;
       flex: 0 0 auto;
-      border-radius: 18px;
+      border-radius: 16px;
       object-fit: cover;
       box-shadow: 0 14px 30px rgba(0, 0, 0, .09);
+    }
+
+    .project-card:nth-child(5) {
+      grid-column: 2;
+    }
+
+    .project-card h3 {
+      font-size: clamp(25px, 1.85vw, 33px);
     }
 
     .project-card p {
       margin-bottom: 0;
       color: var(--muted);
-      font-size: 17px;
+      font-size: 15.5px;
       line-height: 1.24;
       font-weight: 600;
     }
@@ -831,6 +839,16 @@
       justify-content: space-between;
       gap: 16px;
       border-top: 1px solid rgba(16, 16, 20, .1);
+    }
+
+    @media (max-width: 1180px) {
+      .projects-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .project-card:nth-child(5) {
+        grid-column: auto;
+      }
     }
 
     @media (max-width: 980px) {
@@ -1225,6 +1243,15 @@
             <div>
               <h3>CEO Turnover Index</h3>
               <p>Analytics dashboard tracking global CEO turnover, built on Russell Reynolds data.</p>
+            </div>
+          </a>
+          <a class="project-card" href="https://remi-ashen.vercel.app/">
+            <div class="project-top">
+              <img class="project-logo" src="logos/remi-icon.svg" alt="Remi logo">
+            </div>
+            <div>
+              <h3>Remi</h3>
+              <p>Public listed company remuneration tracking and comparison dashboard.</p>
             </div>
           </a>
           <a class="project-card" href="https://proxy-wars-dissent-tracker.vercel.app/">
