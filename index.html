@@ -614,16 +614,6 @@
       box-shadow: var(--shadow);
     }
 
-    .project-card:not(a) {
-      cursor: default;
-    }
-
-    .project-card:not(a):hover {
-      transform: none;
-      background: rgba(255, 253, 249, .58);
-      box-shadow: none;
-    }
-
     .project-top {
       display: flex;
       align-items: flex-start;
@@ -638,17 +628,6 @@
       border-radius: 16px;
       object-fit: cover;
       box-shadow: 0 14px 30px rgba(0, 0, 0, .09);
-    }
-
-    .project-logo-placeholder {
-      display: grid;
-      place-items: center;
-      background: rgba(16, 16, 20, .08);
-      color: rgba(16, 16, 20, .45);
-      font-family: var(--mono);
-      font-size: 24px;
-      line-height: 1;
-      font-weight: 400;
     }
 
     .project-card h3 {
@@ -1304,15 +1283,15 @@
               <p>Moves all your OneNote notes into Notion automatically, including images.</p>
             </div>
           </a>
-          <div class="project-card" aria-label="Coming soon">
+          <a class="project-card" href="https://vantageous.vercel.app/">
             <div class="project-top">
-              <span class="project-logo project-logo-placeholder" aria-hidden="true">+</span>
+              <img class="project-logo" src="logos/vantageous-icon.svg" alt="Vantageous logo">
             </div>
             <div>
-              <h3>Coming soon</h3>
-              <p>Stay tuned.</p>
+              <h3>Vantageous</h3>
+              <p>AI-powered market intelligence turning today's news into actionable market signals.</p>
             </div>
-          </div>
+          </a>
         </div>
       </div>
       <a class="scroll-cue" href="#publications" aria-label="Scroll to Publications"></a>
