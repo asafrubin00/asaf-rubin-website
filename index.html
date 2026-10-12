@@ -5,454 +5,258 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Asaf Rubin | Leadership Advisory, Data Analytics & Governance Research</title>
   <meta name="description" content="Asaf Rubin is a research professional focused on leadership advisory, data analytics, governance research, board advisory, CEO succession, and applied AI tools.">
+  <meta name="theme-color" content="#0d1520">
   <link rel="icon" type="image/png" href="logos/asafrubin-icon.png">
   <link rel="apple-touch-icon" href="logos/asafrubin-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Cormorant+SC:wght@500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --paper: #f4f1ee;
-      --paper-2: #ebe6e0;
-      --ink: #101014;
-      --muted: #68635f;
-      --soft: #d9d1c9;
-      --line: rgba(16, 16, 20, .16);
-      --green: #145d2b;
-      --green-2: #0f3f23;
-      --white: #fffdf9;
-      --shadow: 0 24px 70px rgba(20, 17, 15, .12);
-      --mono: "DM Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-      --serif: "Cormorant Garamond", Georgia, serif;
+      --bg: #0d1520;
+      --bg2: #121c29;
+      --ink: #e9e2d0;
+      --muted: #a59f90;
+      --brass: #b39a62;
+      --line: rgba(179, 154, 98, .38);
+      --line-soft: rgba(179, 154, 98, .2);
+      --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+      --sc: "Cormorant SC", Georgia, "Times New Roman", serif;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --header: 108px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 82px;
       scroll-snap-type: y mandatory;
-      background: var(--paper);
+      background: var(--bg);
     }
 
     body {
       margin: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, var(--bg2) 0%, var(--bg) 70%) fixed, var(--bg);
       color: var(--ink);
-      background:
-        radial-gradient(circle at 12% 8%, rgba(20, 93, 43, .08), transparent 28%),
-        linear-gradient(135deg, #f7f4f0 0%, #ede7e0 48%, #f3f0ec 100%);
       font-family: var(--serif);
-      font-size: 18px;
-      line-height: 1.45;
-      overflow-x: hidden;
+      font-size: 20px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      pointer-events: none;
+      opacity: .05;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
+    a { color: var(--ink); text-decoration: none; transition: color .2s; }
+    a:hover { color: var(--brass); }
+    img { display: block; max-width: 100%; }
 
+    .sc { font-family: var(--sc); letter-spacing: .22em; }
+
+    /* Header */
     .site-header {
       position: fixed;
       z-index: 50;
       top: 0;
       left: 0;
       right: 0;
-      height: 82px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      padding: 18px clamp(22px, 4vw, 64px);
-      background: rgba(244, 241, 238, .78);
-      border-bottom: 1px solid rgba(16, 16, 20, .08);
-      backdrop-filter: blur(18px);
-    }
-
-    .brand {
-      display: inline-flex;
       align-items: center;
-      gap: 12px;
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: var(--green-2);
+      gap: 24px;
+      flex-wrap: wrap;
+      padding: 30px max(32px, calc((100% - 1136px) / 2));
+      background: rgba(13, 21, 32, .92);
     }
 
-    .brand img {
-      width: 47px;
-      height: 47px;
-      border-radius: 12px;
-      box-shadow: 0 10px 26px rgba(0, 0, 0, .12);
-    }
+    .brand { display: flex; color: var(--brass); }
+    .brand svg { width: 46px; height: 46px; }
 
     .nav {
       display: flex;
-      align-items: center;
-      gap: clamp(18px, 3.4vw, 54px);
-      font-family: var(--serif);
-      font-size: clamp(16px, 1.25vw, 20px);
-      font-weight: 600;
+      flex-wrap: wrap;
+      gap: 36px;
+      font-family: var(--sc);
+      font-size: 15px;
+      letter-spacing: .22em;
     }
 
     .nav a {
-      position: relative;
-      padding: 6px 0;
+      color: var(--muted);
+      padding-bottom: 4px;
+      border-bottom: 1px solid transparent;
+      transition: color .2s, border-color .2s;
     }
 
-    .nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 2px;
-      height: 1px;
-      transform: scaleX(0);
-      transform-origin: left;
-      background: currentColor;
-      transition: transform .22s ease;
+    .nav a:hover,
+    .nav a.is-active {
+      color: var(--ink);
+      border-bottom-color: var(--line);
     }
 
-    .nav a:hover::after,
-    .nav a.is-active::after {
-      transform: scaleX(1);
-    }
-
+    /* Pages: one screen each, snap between them */
     main {
-      padding-top: 82px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
     }
 
-    .section {
+    .page {
       position: relative;
-      min-height: calc(100svh - 82px);
-      padding: clamp(56px, 6vw, 86px) clamp(24px, 5vw, 86px);
-      display: grid;
-      align-items: center;
+      height: 100vh;
+      height: 100dvh;
+      padding: 112px 0 44px;
+      overflow: hidden;
       scroll-snap-align: start;
       scroll-snap-stop: always;
+      align-content: center;
     }
 
-    .section-inner {
-      width: min(1280px, 100%);
-      margin: 0 auto;
+    .page-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .eyebrow {
-      margin: 0 0 22px;
-      font-family: var(--mono);
-      font-size: 12px;
-      letter-spacing: .13em;
-      text-transform: uppercase;
-      color: var(--green);
-    }
-
-    h1,
-    h2,
-    h3,
-    p {
-      margin-top: 0;
-    }
-
-    h1 {
-      margin-bottom: 24px;
-      font-size: clamp(50px, 4.7vw, 68px);
-      line-height: .9;
-      font-weight: 600;
-      letter-spacing: 0;
+      margin: 0;
+      font-family: var(--sc);
+      font-size: 14px;
+      letter-spacing: .22em;
+      color: var(--brass);
     }
 
     h2 {
-      margin-bottom: 26px;
-      font-size: clamp(48px, 6vw, 88px);
-      line-height: .9;
+      margin: 16px 0 0;
       font-weight: 400;
-      letter-spacing: 0;
+      font-size: clamp(34px, 3.6vw, 48px);
+      line-height: 1.1;
     }
 
-    h3 {
-      margin-bottom: 8px;
-      font-size: clamp(25px, 2.2vw, 36px);
-      line-height: 1;
-      font-weight: 600;
+    .btn {
+      display: inline-block;
+      font-family: var(--sc);
+      font-size: 14px;
+      letter-spacing: .22em;
+      color: var(--ink);
+      background: transparent;
+      border: 1px solid var(--brass);
+      border-radius: 0;
+      padding: 13px 34px;
+      cursor: pointer;
+      transition: background .2s, color .2s;
     }
 
-    .hero-grid {
+    .btn:hover,
+    .btn:focus-visible { background: var(--brass); color: var(--bg); }
+    .btn.secondary { border-color: var(--line); }
+
+    /* About */
+    .hero {
       display: grid;
-      grid-template-columns: minmax(300px, 430px) minmax(420px, 1fr);
-      gap: clamp(58px, 8vw, 112px);
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+      gap: 72px;
       align-items: center;
     }
 
-    .portrait-wrap {
-      align-self: center;
+    h1 {
+      margin: 0;
+      font-weight: 400;
+      font-size: clamp(52px, min(7.5vw, 11vh), 108px);
+      line-height: 1;
+      letter-spacing: .01em;
+    }
+
+    .rule {
+      width: 72px;
+      height: 1px;
+      background: var(--brass);
+      opacity: .7;
+      margin: 34px 0 28px;
+    }
+
+    .role { margin: 0; font-family: var(--sc); font-size: 16px; letter-spacing: .22em; color: var(--brass); }
+    .credentials { margin: 14px 0 0; font-family: var(--sc); font-size: 14px; letter-spacing: .22em; color: var(--muted); }
+    .intro { margin: 32px 0 0; max-width: 520px; font-size: 24px; line-height: 1.45; }
+
+    .quick-links {
+      margin-top: 44px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 26px;
+      font-family: var(--sc);
+      font-size: 13px;
+      letter-spacing: .22em;
+    }
+
+    .portrait-ring {
+      justify-self: center;
+      width: 100%;
+      max-width: min(360px, 50vh);
+      padding: 10px;
+      border: 1px solid rgba(179, 154, 98, .45);
+      border-radius: 50%;
     }
 
     .portrait {
-      width: min(100%, 360px);
+      width: 100%;
       aspect-ratio: 1 / 1;
       object-fit: cover;
       object-position: center 18%;
-      border: 1.5px solid var(--ink);
       border-radius: 50%;
-      background: var(--white);
-      box-shadow: none;
     }
 
-    .quick-links {
-      width: min(100%, 360px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-      margin-top: 20px;
-    }
-
-    .icon-link {
-      width: 34px;
-      height: 34px;
-      display: inline-grid;
-      place-items: center;
-      border-radius: 9px;
-      background: var(--ink);
-      transition: transform .2s ease, background .2s ease;
-    }
-
-    .icon-link:hover {
-      transform: translateY(-2px);
-      background: var(--green);
-    }
-
-    .icon-link img {
-      width: 20px;
-      height: 20px;
-      object-fit: contain;
-      filter: invert(1);
-    }
-
-    .icon-text {
-      color: var(--white);
-      font-family: var(--mono);
-      font-size: 11px;
-      font-weight: 500;
-      line-height: 1;
-    }
-
-    .icon-text.rg sup {
-      font-size: 7px;
-      vertical-align: super;
-    }
-
-    .substack-mark {
-      width: 18px;
-      height: 18px;
-      position: relative;
-      display: block;
-    }
-
-    .substack-mark::before,
-    .substack-mark::after,
-    .substack-mark span {
-      content: "";
-      position: absolute;
-      left: 2px;
-      right: 2px;
-      height: 2px;
-      background: var(--white);
-    }
-
-    .substack-mark::before {
-      top: 1px;
-    }
-
-    .substack-mark span {
-      top: 6px;
-    }
-
-    .substack-mark::after {
-      top: 11px;
-      height: 7px;
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 64%, 0 100%);
-    }
-
-    .hero-copy {
-      padding-bottom: 22px;
-    }
-
-    .role {
-      max-width: 520px;
-      margin-bottom: 48px;
-      font-size: clamp(24px, 2.15vw, 31px);
-      line-height: 1.12;
-      font-weight: 500;
-      color: var(--ink);
-    }
-
-    .credentials {
-      margin-bottom: 76px;
-      font-family: var(--mono);
-      font-size: 17px;
-      color: var(--muted);
-    }
-
-    .intro {
-      max-width: 590px;
-      font-size: clamp(22px, 1.8vw, 26px);
-      line-height: 1.16;
-      font-weight: 600;
-    }
-
-    .scroll-cue {
-      position: absolute;
-      left: 50%;
-      bottom: 28px;
-      width: 34px;
-      height: 42px;
-      transform: translateX(-50%);
-      display: grid;
-      place-items: center;
-      color: rgba(16, 16, 20, .42);
-      font-family: var(--mono);
-      font-size: 26px;
-      line-height: 1;
-      animation: cueFade 1.8s ease-in-out infinite;
-    }
-
-    .scroll-cue::before,
-    .scroll-cue::after {
-      content: "⌄";
-      position: absolute;
-    }
-
-    .scroll-cue::before {
-      top: 0;
-    }
-
-    .scroll-cue::after {
-      top: 14px;
-    }
-
-    @keyframes cueFade {
-      0%, 100% {
-        opacity: .32;
-        transform: translate(-50%, -2px);
-      }
-
-      50% {
-        opacity: .82;
-        transform: translate(-50%, 4px);
-      }
-    }
-
+    /* CV chatbot (keeps its own look) */
     .chat-grid {
       display: grid;
-      grid-template-columns: minmax(300px, 360px) minmax(720px, 1fr);
-      gap: clamp(32px, 5vw, 66px);
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+      gap: 64px;
       align-items: center;
     }
 
-    .chat-copy h2 {
-      font-size: clamp(42px, 4.25vw, 62px);
-      max-width: 360px;
-    }
-
-    .chat-copy p {
-      max-width: 340px;
-      color: var(--muted);
-      font-size: 19px;
-      line-height: 1.24;
-      font-weight: 600;
-    }
-
-    .chat-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 22px;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 36px;
-      padding: 8px 13px;
-      border: 1px solid var(--ink);
-      border-radius: 999px;
-      font-family: var(--mono);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: .06em;
-      transition: transform .2s ease, background .2s ease, color .2s ease;
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-      background: var(--ink);
-      color: var(--paper);
-    }
-
-    .button.primary {
-      background: var(--ink);
-      color: var(--paper);
-    }
-
-    .button.primary:hover {
-      background: var(--green);
-      border-color: var(--green);
-    }
-
-    .chat-frame-shell {
-      height: min(690px, calc(100svh - 150px));
-      min-height: 610px;
-      overflow: hidden;
-      border: 1px solid rgba(16, 16, 20, .14);
-      border-radius: 28px;
-      background: #1f1f1f;
-      box-shadow: var(--shadow);
-    }
+    .chat-copy p.lede { margin: 24px 0 0; color: var(--muted); font-size: 20px; }
+    .chat-actions { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 16px; }
 
     .chat-widget {
-      width: 100%;
-      height: 100%;
+      height: clamp(440px, calc(100vh - 190px), 600px);
+      overflow: hidden;
       padding: 28px;
       display: flex;
       flex-direction: column;
       gap: 18px;
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: 28px;
       background: #1f1f1f;
       color: #f4f4f4;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: var(--sans);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, .45);
     }
 
     .chat-widget-header h3 {
       margin: 0;
       color: #f4f4f4;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       font-size: 28px;
       line-height: 1.08;
       font-weight: 800;
     }
 
     .chat-widget-header p {
-      max-width: 760px;
       margin: 10px 0 0;
       color: #e8e8e8;
       font-size: 14px;
       line-height: 1.35;
-      font-weight: 400;
     }
 
     .chat-welcome {
       padding: 14px 16px;
       border-radius: 16px;
       background: #303030;
-      color: #f4f4f4;
       font-size: 14px;
       line-height: 1.35;
     }
@@ -467,48 +271,30 @@
       padding-right: 4px;
     }
 
-    .chat-log::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    .chat-log::-webkit-scrollbar-thumb {
-      border-radius: 999px;
-      background: rgba(255, 255, 255, .22);
-    }
+    .chat-log::-webkit-scrollbar { width: 8px; }
+    .chat-log::-webkit-scrollbar-thumb { border-radius: 999px; background: rgba(255, 255, 255, .22); }
 
     .chat-bubble {
       width: min(760px, 100%);
       padding: 13px 15px;
       border-radius: 13px;
       background: #303030;
-      color: #f4f4f4;
       font-size: 14px;
       line-height: 1.38;
       white-space: pre-wrap;
     }
 
-    .chat-bubble.user {
-      align-self: flex-end;
-      background: #5a5a5a;
-    }
-
-    .chat-bubble.bot {
-      align-self: flex-start;
-    }
-
-    .chat-bubble.pending {
-      color: #a8a8a8;
-    }
+    .chat-bubble.user { align-self: flex-end; background: #5a5a5a; }
+    .chat-bubble.bot { align-self: flex-start; }
+    .chat-bubble.pending { color: #a8a8a8; }
 
     .chat-prompts {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 10px 14px;
     }
 
-    .chat-prompts.is-hidden {
-      display: none;
-    }
+    .chat-prompts.is-hidden { display: none; }
 
     .chat-prompt {
       min-height: 42px;
@@ -517,19 +303,14 @@
       border-radius: 11px;
       background: #303030;
       color: #f4f4f4;
-      font: 500 14px/1.2 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font: 500 14px/1.2 var(--sans);
       cursor: pointer;
     }
 
-    .chat-prompt:hover {
-      background: #3a3a3a;
-    }
+    .chat-prompt:hover { background: #3a3a3a; }
 
-    .chat-status {
-      min-height: 16px;
-      color: #a8a8a8;
-      font-size: 12px;
-    }
+    .chat-status { min-height: 16px; margin-top: -10px; color: #a8a8a8; font-size: 12px; }
+    .chat-status:empty { display: none; }
 
     .chat-composer {
       display: flex;
@@ -548,13 +329,11 @@
       padding: 8px 0;
       background: transparent;
       color: #f4f4f4;
-      font: 400 14px/1.2 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font: 400 14px/1.2 var(--sans);
       outline: 0;
     }
 
-    .chat-composer input::placeholder {
-      color: #a2a2a2;
-    }
+    .chat-composer input::placeholder { color: #a2a2a2; }
 
     .chat-send {
       width: 38px;
@@ -569,566 +348,321 @@
       cursor: pointer;
     }
 
-    .chat-send:disabled {
-      opacity: .55;
-      cursor: not-allowed;
-    }
+    .chat-send:disabled { opacity: .55; cursor: not-allowed; }
 
     .chat-send svg {
       width: 21px;
       height: 21px;
+      fill: none;
       stroke: currentColor;
       stroke-width: 2.4;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
 
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 16px;
+    /* Projects */
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
     }
 
-    .section-heading-compact {
-      margin-bottom: 34px;
-      font-size: clamp(32px, 3.2vw, 48px);
-      line-height: 1.05;
-      font-weight: 500;
-      white-space: nowrap;
+    .head-link {
+      font-family: var(--sc);
+      font-size: 13px;
+      letter-spacing: .22em;
+      color: var(--muted);
+      padding-bottom: 4px;
+      border-bottom: 1px solid transparent;
+    }
+
+    .head-link:hover { color: var(--ink); border-bottom-color: var(--line); }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
     }
 
     .project-card {
-      min-height: 236px;
-      padding: 22px;
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      border: 1px solid rgba(16, 16, 20, .12);
-      background: rgba(255, 253, 249, .58);
-      transition: transform .22s ease, background .22s ease, box-shadow .22s ease;
+      gap: 16px;
+      align-items: center;
+      padding: 14px 16px;
+      border: 1px solid var(--line-soft);
+      border-radius: 8px;
+      background: rgba(18, 28, 41, .5);
+      transition: border-color .2s, background .2s;
     }
 
-    .project-card:hover {
-      transform: translateY(-5px);
-      background: var(--white);
-      box-shadow: var(--shadow);
-    }
-
-    .project-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: flex-start;
-      gap: 18px;
-    }
+    .project-card:hover { border-color: rgba(179, 154, 98, .7); background: rgba(26, 38, 54, .85); color: var(--ink); }
+    .project-card:hover h3 { color: var(--brass); }
+    .project-card:hover .card-arrow { opacity: 1; }
 
     .project-logo {
-      width: 58px;
-      height: 58px;
-      flex: 0 0 auto;
-      border-radius: 16px;
-      object-fit: cover;
-      box-shadow: 0 14px 30px rgba(0, 0, 0, .09);
+      flex: none;
+      width: 44px;
+      height: 44px;
+      overflow: hidden;
+      border-radius: 9px;
+    }
+
+    .project-logo img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.14); }
+
+    .project-body { flex: 1; min-width: 0; }
+
+    .project-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
     }
 
     .project-card h3 {
-      font-size: clamp(25px, 1.85vw, 33px);
+      margin: 0;
+      font-weight: 400;
+      font-size: 21px;
+      line-height: 1.2;
+      transition: color .2s;
     }
+
+    .card-arrow { color: var(--brass); font-size: 14px; opacity: 0; transition: opacity .2s; }
 
     .project-card p {
-      margin-bottom: 0;
+      margin: 2px 0 0;
       color: var(--muted);
       font-size: 15.5px;
-      line-height: 1.24;
-      font-weight: 600;
+      line-height: 1.35;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
+    .project-card.soon { border-style: dashed; background: transparent; }
+
+    .project-card.soon .project-logo {
+      display: grid;
+      place-items: center;
+      border: 1px dashed rgba(179, 154, 98, .45);
+      color: var(--brass);
+      font-size: 22px;
+    }
+
+    .soon-title { display: block; font-size: 21px; line-height: 1.2; color: var(--muted); font-style: italic; }
+    .soon-tag { display: block; margin-top: 4px; font-family: var(--sc); font-size: 12px; letter-spacing: .22em; color: var(--muted); opacity: .8; }
+
+    /* Publications */
     .publications-layout {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(34px, 5vw, 72px);
-      align-items: start;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 56px;
+      margin-top: 36px;
     }
 
     .pub-group-title {
-      margin-bottom: 20px;
-      font-family: var(--mono);
+      margin: 0 0 8px;
+      font-family: var(--sc);
       font-size: 13px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--green);
+      letter-spacing: .22em;
+      color: var(--muted);
     }
 
-    .publication-list {
-      display: grid;
-      gap: 12px;
-    }
+    .publication-list { border-top: 1px solid var(--line-soft); }
 
     .publication {
       display: grid;
-      grid-template-columns: 58px 1fr;
-      gap: 18px;
-      padding: 18px 18px 18px 0;
-      border-top: 1px solid rgba(16, 16, 20, .09);
-      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+      grid-template-columns: 52px minmax(0, 1fr);
+      gap: 20px;
+      align-items: baseline;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--line-soft);
     }
 
-    .publication:hover {
-      transform: translateX(4px);
-      border-color: rgba(20, 93, 43, .28);
-      background: linear-gradient(90deg, rgba(255, 253, 249, .58), rgba(255, 253, 249, 0));
-    }
+    .publication:hover { color: var(--ink); }
+    .publication:hover .pub-title { color: var(--brass); }
 
-    .publication:hover .pub-title,
-    .publication:focus-visible .pub-title {
-      color: var(--green);
-    }
+    .pub-year { font-family: var(--sc); font-size: 15px; letter-spacing: .22em; color: var(--brass); }
+    .pub-title { display: block; font-size: 19px; line-height: 1.28; transition: color .2s; }
+    .pub-source { display: block; margin-top: 3px; color: var(--muted); font-size: 15px; font-style: italic; }
 
-    .pub-year {
-      width: fit-content;
-      min-width: 46px;
-      height: 25px;
-      display: inline-grid;
-      place-items: center;
-      border: 1px solid rgba(20, 93, 43, .28);
-      border-radius: 999px;
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--green);
-      line-height: 1;
-      margin-top: 1px;
-    }
-
-    .pub-title {
-      display: block;
-      margin-bottom: 7px;
-      font-size: 20px;
-      line-height: 1.12;
-      font-weight: 700;
-      transition: color .2s ease;
-    }
-
-    .pub-source {
-      display: block;
-      margin: 0;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.22;
-      font-weight: 600;
-    }
-
+    /* Contact */
     .contact-layout {
       display: grid;
-      grid-template-columns: minmax(330px, 480px) minmax(420px, 1fr);
-      gap: clamp(42px, 7vw, 96px);
-      align-items: start;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr);
+      gap: 64px;
     }
 
-    .contact-text p {
-      max-width: 430px;
-      color: var(--muted);
-      font-size: 23px;
-      line-height: 1.22;
-      font-weight: 600;
-    }
+    .contact-text p { margin: 24px 0 0; color: var(--muted); font-size: 19px; }
 
     .contact-methods {
-      display: grid;
-      gap: 14px;
-      margin-top: 34px;
-      font-family: var(--mono);
-      font-size: 13px;
-    }
-
-    .contact-method {
+      margin-top: 32px;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       gap: 12px;
-      color: var(--green-2);
-    }
-
-    .contact-method img {
-      width: 22px;
-      height: 22px;
-      object-fit: contain;
-    }
-
-    .qr {
-      width: 150px;
-      margin-top: 24px;
-      border-radius: 18px;
-      box-shadow: 0 16px 36px rgba(0, 0, 0, .12);
+      font-family: var(--sc);
+      font-size: 13px;
+      letter-spacing: .22em;
     }
 
     .contact-form {
-      padding: clamp(24px, 4vw, 44px);
-      border: 1px solid rgba(16, 16, 20, .12);
-      background: rgba(255, 253, 249, .62);
-      box-shadow: var(--shadow);
-    }
-
-    .field-row {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 30px 32px;
     }
 
-    label {
+    .contact-form .full { grid-column: 1 / -1; }
+
+    .contact-form label {
       display: block;
-      margin-bottom: 8px;
-      font-family: var(--mono);
-      font-size: 12px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: var(--muted);
+      margin-bottom: 6px;
+      font-family: var(--sc);
+      font-size: 13px;
+      letter-spacing: .2em;
+      color: var(--brass);
     }
 
-    input,
-    textarea {
+    .contact-form input,
+    .contact-form textarea {
       width: 100%;
-      border: 0;
-      border-bottom: 1px solid rgba(16, 16, 20, .28);
-      border-radius: 0;
-      padding: 9px 0 12px;
       background: transparent;
+      border: 0;
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
       color: var(--ink);
-      font: 600 21px/1.2 var(--serif);
+      font: inherit;
+      font-size: 20px;
+      padding: 8px 0;
       outline: none;
+      transition: border-color .2s;
     }
 
-    textarea {
-      min-height: 160px;
-      resize: vertical;
-    }
+    .contact-form input:focus,
+    .contact-form textarea:focus { border-bottom-color: var(--brass); }
 
-    input:focus,
-    textarea:focus {
-      border-bottom-color: var(--green);
-    }
+    .contact-form textarea { resize: vertical; min-height: 140px; }
 
     .form-actions {
+      grid-column: 1 / -1;
       display: flex;
       justify-content: flex-end;
-      margin-top: 28px;
+      align-items: center;
+      gap: 24px;
     }
 
-    .form-status {
-      min-height: 18px;
-      margin: 14px 0 0;
-      color: var(--muted);
-      font-family: var(--mono);
-      font-size: 11px;
-      line-height: 1.35;
-    }
-
-    .form-status a {
-      color: var(--green-2);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
+    .form-status { margin: 0; color: var(--muted); font-size: 17px; }
+    .form-status a { color: var(--brass); }
 
     .footer {
-      padding: 24px clamp(24px, 5vw, 86px) 44px;
-      font-family: var(--mono);
-      font-size: 12px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 18px;
+      text-align: center;
+      font-family: var(--sc);
+      font-size: 13px;
+      letter-spacing: .24em;
       color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      border-top: 1px solid rgba(16, 16, 20, .1);
+      opacity: .8;
     }
 
-    @media (max-width: 1180px) {
-      .projects-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
+    /* Responsive */
+    @media (max-width: 1100px) {
+      .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
-    @media (max-width: 980px) {
-      .site-header {
+    /* Phones and small tablets: About, Chatbot and Contact still fit one screen;
+       Projects and Publications are allowed to run longer and scroll. */
+    @media (max-width: 860px) {
+      main { padding: 0 20px; }
+      .site-header { padding: 18px 20px; }
+      .brand { display: none; }
+      .nav { width: 100%; justify-content: space-between; gap: 8px; font-size: 11.5px; letter-spacing: .1em; }
+      .page { padding: 76px 0 28px; }
+      #projects, #publications {
         height: auto;
-        align-items: flex-start;
-        gap: 18px;
+        min-height: 100vh;
+        min-height: 100dvh;
+        overflow: visible;
+        scroll-snap-stop: normal;
+        padding-bottom: 48px;
       }
+      h2 { margin-top: 10px; font-size: 32px; }
+      .eyebrow { font-size: 12px; }
 
-      .nav {
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        gap: 12px 22px;
-      }
+      .hero { grid-template-columns: minmax(0, 1fr); gap: 22px; align-content: center; }
+      .hero .portrait-ring { order: -1; justify-self: start; max-width: min(170px, 24vh); padding: 6px; }
+      h1 { font-size: clamp(40px, 12vw, 56px); }
+      .rule { margin: 18px 0 16px; }
+      .role { font-size: 13px; letter-spacing: .16em; }
+      .credentials { margin-top: 8px; font-size: 12px; }
+      .intro { margin-top: 16px; font-size: 19px; }
+      .quick-links { margin-top: 22px; gap: 10px 18px; font-size: 12px; letter-spacing: .16em; }
 
-      main {
-        padding-top: 104px;
-      }
+      .chat-grid { grid-template-columns: minmax(0, 1fr); gap: 18px; align-content: center; }
+      .chat-copy p.lede { margin-top: 10px; font-size: 16px; line-height: 1.4; }
+      .chat-actions { margin-top: 14px; flex-wrap: nowrap; gap: 10px; }
+      .chat-actions .btn { padding: 10px 16px; font-size: 12px; letter-spacing: .14em; white-space: nowrap; }
+      .chat-widget { height: max(400px, calc(100dvh - 330px)); padding: 16px; gap: 11px; border-radius: 18px; }
+      .chat-widget-header h3 { font-size: 19px; }
+      .chat-widget-header p { margin-top: 6px; font-size: 12.5px; }
+      .chat-welcome { padding: 11px 13px; font-size: 13px; }
+      .chat-bubble { font-size: 13px; }
+      .chat-prompts { gap: 8px; }
+      .chat-prompt { min-height: 38px; padding: 8px 9px; font-size: 12px; }
+      .chat-composer { min-height: 48px; padding: 6px 8px 6px 14px; }
+      .chat-composer input { font-size: 16px; }
+      .chat-send { width: 34px; height: 34px; flex-basis: 34px; }
 
-      .hero-grid,
-      .chat-grid,
-      .publications-layout,
-      .contact-layout {
-        grid-template-columns: 1fr;
-      }
+      .section-head { margin-bottom: 22px; }
+      .projects-grid { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+      .project-card p { -webkit-line-clamp: 4; }
+      .publications-layout { grid-template-columns: minmax(0, 1fr); gap: 30px; margin-top: 24px; }
 
-      .portrait {
-        width: min(360px, 100%);
-      }
-
-      .projects-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .chat-frame-shell {
-        min-height: 620px;
-        height: 620px;
-      }
+      .contact-layout { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+      .contact-text p { margin-top: 10px; font-size: 16px; line-height: 1.4; }
+      .contact-methods { margin-top: 14px; gap: 8px; font-size: 12px; letter-spacing: .14em; }
+      .contact-form { gap: 16px 18px; }
+      .contact-form label { margin-bottom: 2px; font-size: 12px; }
+      .contact-form input, .contact-form textarea { font-size: 17px; padding: 6px 0; }
+      .contact-form textarea { min-height: 72px; height: 72px; }
+      .form-actions .btn { padding: 10px 26px; }
+      .footer { bottom: 10px; font-size: 10px; letter-spacing: .14em; padding: 0 20px; }
     }
 
-    @media (max-width: 680px) {
-      html {
-        scroll-padding-top: 0;
-        scroll-snap-type: none;
-      }
+    @media (max-width: 860px) and (max-height: 700px) {
+      .chat-copy p.lede { display: none; }
+      .chat-widget { height: max(340px, calc(100dvh - 262px)); }
+      .chat-widget-header p { display: none; }
+      .chat-prompts { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; }
+      .chat-prompts::-webkit-scrollbar { display: none; }
+      .chat-prompt { flex: none; white-space: nowrap; }
+      .contact-text p { font-size: 15px; }
+      .contact-form textarea { min-height: 52px; height: 52px; }
+      .footer { display: none; }
+    }
 
-      body {
-        font-size: 16px;
-      }
+    @media (max-width: 370px) {
+      .site-header { padding: 18px 14px; }
+      .nav { font-size: 10.5px; letter-spacing: .05em; gap: 4px; }
+    }
 
-      .site-header {
-        position: static;
-        padding: 14px 18px 12px;
-        align-items: center;
-      }
-
-      main {
-        padding-top: 0;
-      }
-
-      .brand img {
-        width: 36px;
-        height: 36px;
-        border-radius: 9px;
-      }
-
-      .brand span {
-        display: none;
-      }
-
-      .nav {
-        flex: 1;
-        justify-content: flex-end;
-        gap: 7px 12px;
-        font-size: 12px;
-        line-height: 1;
-      }
-
-      .nav a {
-        padding: 4px 0;
-      }
-
-      .section {
-        min-height: auto;
-        padding: 54px 22px 68px;
-        display: block;
-        scroll-snap-align: none;
-      }
-
-      .hero-grid,
-      .chat-grid,
-      .publications-layout,
-      .contact-layout {
-        gap: 30px;
-      }
-
-      .portrait-wrap {
-        display: grid;
-        justify-items: center;
-      }
-
-      .portrait {
-        width: min(265px, 82vw);
-      }
-
-      .quick-links {
-        width: min(265px, 82vw);
-        gap: 9px;
-        margin-top: 16px;
-      }
-
-      .icon-link {
-        width: 29px;
-        height: 29px;
-        border-radius: 8px;
-      }
-
-      .icon-link img {
-        width: 17px;
-        height: 17px;
-      }
-
-      .hero-copy {
-        padding-bottom: 0;
-        text-align: left;
-      }
-
-      h1 {
-        margin: 24px 0 14px;
-        font-size: 46px;
-      }
-
-      .role {
-        margin-bottom: 24px;
-        font-size: 24px;
-        line-height: 1.12;
-      }
-
-      .credentials {
-        margin-bottom: 34px;
-        font-size: 13px;
-      }
-
-      .intro {
-        font-size: 20px;
-        line-height: 1.16;
-      }
-
-      .eyebrow {
-        margin-bottom: 14px;
-        font-size: 11px;
-      }
-
-      .section-heading-compact {
-        white-space: normal;
-        margin-bottom: 24px;
-        font-size: 31px;
-        line-height: 1.08;
-      }
-
-      .chat-copy h2 {
-        max-width: none;
-        margin-bottom: 18px;
-        font-size: 44px;
-        line-height: .95;
-      }
-
-      .chat-copy p {
-        max-width: none;
-        font-size: 18px;
-      }
-
-      .button {
-        min-height: 34px;
-        padding: 8px 12px;
-        font-size: 10px;
-      }
-
-      .projects-grid,
-      .field-row {
-        grid-template-columns: 1fr;
-      }
-
-      .project-card {
-        min-height: 205px;
-        padding: 22px;
-      }
-
-      .project-logo {
-        width: 52px;
-        height: 52px;
-        border-radius: 14px;
-      }
-
-      .project-card h3 {
-        font-size: 27px;
-      }
-
-      .project-card p {
-        font-size: 16px;
-      }
-
-      .pub-group-title {
-        margin-top: 10px;
-      }
-
-      .publication {
-        grid-template-columns: 1fr;
-        gap: 9px;
-        padding: 16px 0;
-      }
-
-      .pub-title {
-        font-size: 18px;
-      }
-
-      .pub-source {
-        font-size: 14px;
-      }
-
-      .chat-frame-shell {
-        min-height: 590px;
-        height: 590px;
-        border-radius: 18px;
-      }
-
-      .chat-widget {
-        padding: 18px;
-        gap: 13px;
-      }
-
-      .chat-widget-header h3 {
-        font-size: 22px;
-      }
-
-      .chat-widget-header p,
-      .chat-welcome,
-      .chat-bubble,
-      .chat-prompt,
-      .chat-composer input {
-        font-size: 13px;
-      }
-
-      .chat-prompts {
-        grid-template-columns: 1fr;
-        gap: 8px;
-      }
-
-      .contact-text p {
-        max-width: none;
-        font-size: 18px;
-      }
-
-      .contact-methods {
-        font-size: 11px;
-      }
-
-      .contact-form {
-        padding: 22px;
-      }
-
-      input,
-      textarea {
-        font-size: 18px;
-      }
-
-      textarea {
-        min-height: 130px;
-      }
-
-      .scroll-cue {
-        display: none;
-      }
-
-      .footer {
-        flex-direction: column;
-        padding: 22px;
-        font-size: 10px;
-      }
+    @media (min-width: 561px) and (max-width: 860px) {
+      .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
   </style>
 </head>
 <body>
   <header class="site-header">
     <a class="brand" href="#about" aria-label="Asaf Rubin home">
-      <img src="logos/asafrubin-icon.png" alt="">
-      <span>Asaf Rubin</span>
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1.4"/>
+        <circle cx="50" cy="50" r="42.5" fill="none" stroke="currentColor" stroke-width=".7"/>
+        <text x="50" y="61" text-anchor="middle" fill="currentColor" font-family="'Cormorant Garamond', Georgia, serif" font-size="34" letter-spacing="-1">AR</text>
+      </svg>
     </a>
     <nav class="nav" aria-label="Primary navigation">
       <a href="#about" class="is-active">About</a>
@@ -1140,283 +674,244 @@
   </header>
 
   <main>
-    <section class="section" id="about">
-      <div class="section-inner hero-grid">
-        <div class="portrait-wrap">
-          <img class="portrait" src="logos/Asaf Rubin Headshot.jpeg" alt="Asaf Rubin">
-          <div class="quick-links" aria-label="Profile links">
-            <a class="icon-link email-link" href="mailto:rubin.asaf01@gmail.com?subject=Website%20enquiry" aria-label="Email Asaf Rubin">
-              <img src="logos/email.png" alt="">
-            </a>
-            <a class="icon-link" href="https://wa.me/447541459799" aria-label="Message Asaf Rubin on WhatsApp">
-              <img src="logos/phone-call.png" alt="">
-            </a>
-            <a class="icon-link" href="https://www.linkedin.com/in/asaf-rubin-phd-mba-21291466" aria-label="Asaf Rubin on LinkedIn">
-              <img src="logos/linkedin.png" alt="">
-            </a>
-            <a class="icon-link" href="https://github.com/asafrubin00" aria-label="Asaf Rubin on GitHub">
-              <img src="logos/github-sign.png" alt="">
-            </a>
-            <a class="icon-link" href="https://www.researchgate.net/profile/Asaf-Rubin?ev=hdr_xprf" aria-label="Asaf Rubin on ResearchGate">
-              <span class="icon-text rg">R<sup>G</sup></span>
-            </a>
-            <a class="icon-link" href="https://asafrubin.substack.com/" aria-label="Asaf Rubin on Substack">
-              <span class="substack-mark"><span></span></span>
-            </a>
-          </div>
-        </div>
-        <div class="hero-copy">
-          <h1>Asaf Rubin</h1>
-          <p class="role">Leadership Advisory, Data Analytics &amp; Governance Research</p>
-          <p class="credentials">PhD | MBA</p>
-          <p class="intro">Research professional with a background in board &amp; CEO advisory. Currently based in London.</p>
+    <section class="page hero" id="about">
+      <div>
+        <h1>Asaf Rubin</h1>
+        <div class="rule"></div>
+        <p class="role">Leadership Advisory · Data Analytics · Governance Research</p>
+        <p class="credentials">PhD | MBA</p>
+        <p class="intro">Research professional with a background in board &amp; CEO advisory. Currently based in London.</p>
+        <div class="quick-links" aria-label="Profile links">
+          <a class="email-link" href="mailto:rubin.asaf01@gmail.com?subject=Website%20enquiry">Email</a>
+          <a href="https://wa.me/447541459799">WhatsApp</a>
+          <a href="https://www.linkedin.com/in/asaf-rubin-phd-mba-21291466">LinkedIn</a>
+          <a href="https://github.com/asafrubin00">GitHub</a>
+          <a href="https://www.researchgate.net/profile/Asaf-Rubin?ev=hdr_xprf">ResearchGate</a>
+          <a href="https://asafrubin.substack.com/">Substack</a>
         </div>
       </div>
-      <a class="scroll-cue" href="#chatbot" aria-label="Scroll to CV Chatbot"></a>
+      <div class="portrait-ring">
+        <img class="portrait" src="logos/Asaf Rubin Headshot.jpeg" alt="Asaf Rubin">
+      </div>
     </section>
 
-    <section class="section" id="chatbot">
-      <div class="section-inner chat-grid">
-        <div class="chat-copy">
-          <p class="eyebrow">CV Chatbot</p>
-          <h2>Ask the CV directly.</h2>
-          <p>Use the embedded chatbot to explore my background, research, advisory experience, and projects without digging through a static document.</p>
-          <div class="chat-actions">
-            <a class="button primary" href="https://asaf-cv-chatbot.vercel.app/">Open full screen</a>
-            <a class="button" href="#contact">Contact me</a>
-          </div>
-        </div>
-        <div class="chat-frame-shell">
-          <div class="chat-widget" aria-label="Asaf Rubin CV Chatbot">
-            <div class="chat-widget-header">
-              <h3>Asaf Rubin, according to a small pile of documents.</h3>
-              <p>Ask about my background, experience, research and projects.</p>
-            </div>
-            <div class="chat-welcome">Hello. I am AsafBot, a suspiciously punctual approximation of Asaf Rubin. Ask me about research, governance, analytics projects or how to pronounce my name.</div>
-            <div class="chat-log" id="chat-log" aria-live="polite"></div>
-            <div class="chat-prompts" id="chat-prompts">
-              <button class="chat-prompt" type="button">How do you pronounce your name?</button>
-              <button class="chat-prompt" type="button">What did you do at Russell Reynolds Associates?</button>
-              <button class="chat-prompt" type="button">Give me the 30-second summary of your background.</button>
-              <button class="chat-prompt" type="button">Which governance and analytics projects have you built?</button>
-            </div>
-            <div class="chat-status" id="chat-status"></div>
-            <div class="chat-composer">
-              <input id="chat-input" placeholder="Ask anything" autocomplete="off">
-              <button class="chat-send" id="chat-send" type="button" aria-label="Send">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 19V5"></path>
-                  <path d="M5 12l7-7 7 7"></path>
-                </svg>
-              </button>
-            </div>
-          </div>
+    <section class="page chat-grid" id="chatbot">
+      <div class="chat-copy">
+        <p class="eyebrow">CV Chatbot</p>
+        <h2>Ask the CV directly.</h2>
+        <p class="lede">Use the embedded chatbot to explore my background, research, advisory experience, and projects without digging through a static document.</p>
+        <div class="chat-actions">
+          <a class="btn" href="https://asaf-cv-chatbot.vercel.app/">Open full screen</a>
+          <a class="btn secondary" href="#contact">Contact me</a>
         </div>
       </div>
-      <a class="scroll-cue" href="#projects" aria-label="Scroll to Projects"></a>
-    </section>
-
-    <section class="section" id="projects">
-      <div class="section-inner">
-        <h2 class="section-heading-compact">My projects: Built around governance, data and decision-making.</h2>
-        <div class="projects-grid">
-          <a class="project-card" href="https://boardcraft-eight.vercel.app/play">
-            <div class="project-top">
-              <img class="project-logo" src="logos/boardcraft-icon.png" alt="BoardCraft logo">
-            </div>
-            <div>
-              <h3>BoardCraft</h3>
-              <p>A board strategy and corporate governance game, playable in your browser.</p>
-            </div>
-          </a>
-          <a class="project-card" href="https://proxy-wars-dissent-tracker.vercel.app/">
-            <div class="project-top">
-              <img class="project-logo" src="logos/proxywars-icon.png" alt="Proxy Wars logo">
-            </div>
-            <div>
-              <h3>Proxy Wars</h3>
-              <p>FTSE 100 governance radar combining leadership, succession, profit-warning and significant-voting evidence.</p>
-            </div>
-          </a>
-          <a class="project-card" href="https://ceo-turnover-index.vercel.app/">
-            <div class="project-top">
-              <img class="project-logo" src="logos/ceoturnover-icon.png" alt="CEO Turnover Index logo">
-            </div>
-            <div>
-              <h3>CEO Turnover Index</h3>
-              <p>Analytics dashboard tracking global CEO turnover, built on Russell Reynolds data.</p>
-            </div>
-          </a>
-          <a class="project-card" href="https://remi-ashen.vercel.app/">
-            <div class="project-top">
-              <img class="project-logo" src="logos/remi-icon.svg" alt="Remi logo">
-            </div>
-            <div>
-              <h3>Remi</h3>
-              <p>Executive and director pay comparison dashboard; FTSE coverage is still expanding.</p>
-            </div>
-          </a>
-          <a class="project-card" href="https://crowdcallr.vercel.app/">
-            <div class="project-top">
-              <img class="project-logo" src="logos/crowdcallr-icon.png" alt="CrowdCallr logo">
-            </div>
-            <div>
-              <h3>CrowdCallr</h3>
-              <p>Frontend research-challenge and prediction-market prototype; demo activity resets on refresh.</p>
-            </div>
-          </a>
-          <a class="project-card" href="https://asaf-cv-chatbot.vercel.app/">
-            <div class="project-top">
-              <img class="project-logo" src="logos/cvchatbot-icon.png" alt="CV Chatbot logo">
-            </div>
-            <div>
-              <h3>CV Chatbot</h3>
-              <p>Interactive guide to my professional background and projects.</p>
-            </div>
-          </a>
-          <a class="project-card" href="https://github.com/asafrubin00/onenote2notion">
-            <div class="project-top">
-              <img class="project-logo" src="logos/onenote2notion-icon.png" alt="OneNote2Notion logo">
-            </div>
-            <div>
-              <h3>OneNote2Notion</h3>
-              <p>Staged Python migration workflow for OneNote content and images into Notion.</p>
-            </div>
-          </a>
-          <a class="project-card" href="https://vantageous.vercel.app/">
-            <div class="project-top">
-              <img class="project-logo" src="logos/vantageous-icon.svg" alt="Vantageous logo">
-            </div>
-            <div>
-              <h3>Vantageous</h3>
-              <p>Market-news signals, briefings and an assumption-led valuation view.</p>
-            </div>
-          </a>
+      <div class="chat-widget" aria-label="Asaf Rubin CV Chatbot">
+        <div class="chat-widget-header">
+          <h3>Asaf Rubin, according to a small pile of documents.</h3>
+          <p>Ask about my background, experience, research and projects.</p>
+        </div>
+        <div class="chat-welcome">Hello. I am AsafBot, a suspiciously punctual approximation of Asaf Rubin. Ask me about research, governance, analytics projects or how to pronounce my name.</div>
+        <div class="chat-log" id="chat-log" aria-live="polite"></div>
+        <div class="chat-prompts" id="chat-prompts">
+          <button class="chat-prompt" type="button">How do you pronounce your name?</button>
+          <button class="chat-prompt" type="button">What did you do at Russell Reynolds Associates?</button>
+          <button class="chat-prompt" type="button">Give me the 30-second summary of your background.</button>
+          <button class="chat-prompt" type="button">Which governance and analytics projects have you built?</button>
+        </div>
+        <div class="chat-status" id="chat-status"></div>
+        <div class="chat-composer">
+          <input id="chat-input" placeholder="Ask anything" autocomplete="off" aria-label="Ask the CV chatbot">
+          <button class="chat-send" id="chat-send" type="button" aria-label="Send">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 19V5"></path>
+              <path d="M5 12l7-7 7 7"></path>
+            </svg>
+          </button>
         </div>
       </div>
-      <a class="scroll-cue" href="#publications" aria-label="Scroll to Publications"></a>
     </section>
 
-    <section class="section" id="publications">
-      <div class="section-inner">
-        <h2 class="section-heading-compact">My publications: research and thought leadership.</h2>
-        <div class="publications-layout">
-          <div>
-            <div class="pub-group-title">Academic Research</div>
-            <div class="publication-list">
-              <a class="publication" href="https://www.researchgate.net/publication/343735897">
-                <span class="pub-year">2020</span>
-                <span>
-                  <span class="pub-title">Propensity to adopt new technologies and research productivity in a developing country context</span>
-                  <span class="pub-source">International Journal of Business Innovation and Research, 22(4), 546-568</span>
-                </span>
-              </a>
-              <a class="publication" href="https://www.researchgate.net/publication/335551637">
-                <span class="pub-year">2019</span>
-                <span>
-                  <span class="pub-title">Entrepreneurial orientation, technological propensity and academic research productivity</span>
-                  <span class="pub-source">Heliyon, 5(8), e02328</span>
-                </span>
-              </a>
-              <a class="publication" href="https://wiredspace.wits.ac.za/items/9104408c-822e-4bf2-9330-c56c2e08ffc0">
-                <span class="pub-year">2018</span>
-                <span>
-                  <span class="pub-title">Knowledge management determinants of breakthrough research productivity</span>
-                  <span class="pub-source">PhD thesis, University of the Witwatersrand</span>
-                </span>
-              </a>
-            </div>
+    <section class="page page-col" id="projects">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Projects</p>
+          <h2>Built around governance, data and decision-making.</h2>
+        </div>
+        <a class="head-link" href="https://github.com/asafrubin00">All code on GitHub ↗</a>
+      </div>
+      <div class="projects-grid">
+        <a class="project-card" href="https://boardcraft-eight.vercel.app/play">
+          <div class="project-logo"><img src="logos/boardcraft-icon.png" alt=""></div>
+          <div class="project-body">
+            <div class="project-title"><h3>BoardCraft</h3><span class="card-arrow" aria-hidden="true">↗</span></div>
+            <p>A board strategy and corporate governance game, playable in your browser.</p>
           </div>
-          <div>
-            <div class="pub-group-title">Thought Leadership</div>
-            <div class="publication-list">
-              <a class="publication" href="https://www.russellreynolds.com/en/insights/reports-surveys/global-ceo-turnover-index">
-                <span class="pub-year">2024</span>
-                <span>
-                  <span class="pub-title">Global CEO Turnover Index</span>
-                  <span class="pub-source">Russell Reynolds Associates, co-author</span>
-                </span>
-              </a>
-              <a class="publication" href="https://www.russellreynolds.com/en/insights/articles/how-to-structure-an-effective-pre-ipo-board-in-the-uk">
-                <span class="pub-year">2022</span>
-                <span>
-                  <span class="pub-title">How to Structure an Effective Pre-IPO Board in the UK</span>
-                  <span class="pub-source">Russell Reynolds Associates, co-author</span>
-                </span>
-              </a>
-              <a class="publication" href="https://www.russellreynolds.com/en/insights/articles/the-role-of-the-senior-independent-director">
-                <span class="pub-year">2021</span>
-                <span>
-                  <span class="pub-title">The Role of the Senior Independent Director (UK)</span>
-                  <span class="pub-source">Russell Reynolds Associates, co-author</span>
-                </span>
-              </a>
-              <a class="publication" href="https://www.russellreynolds.com/en/insights/articles/what-makes-a-successful-board-chair-defining-their-attributes-and-transition-preparedness">
-                <span class="pub-year">2020</span>
-                <span>
-                  <span class="pub-title">What Makes A Successful Board Chair?</span>
-                  <span class="pub-source">Russell Reynolds Associates, co-author</span>
-                </span>
-              </a>
-            </div>
+        </a>
+        <a class="project-card" href="https://proxy-wars-dissent-tracker.vercel.app/">
+          <div class="project-logo"><img src="logos/proxywars-icon.png" alt=""></div>
+          <div class="project-body">
+            <div class="project-title"><h3>Proxy Wars</h3><span class="card-arrow" aria-hidden="true">↗</span></div>
+            <p>FTSE 100 governance radar combining leadership, succession, profit-warning and significant-voting evidence.</p>
+          </div>
+        </a>
+        <a class="project-card" href="https://ceo-turnover-index.vercel.app/">
+          <div class="project-logo"><img src="logos/ceoturnover-icon.png" alt=""></div>
+          <div class="project-body">
+            <div class="project-title"><h3>CEO Turnover Index</h3><span class="card-arrow" aria-hidden="true">↗</span></div>
+            <p>Analytics dashboard tracking global CEO turnover, built on Russell Reynolds data.</p>
+          </div>
+        </a>
+        <a class="project-card" href="https://remi-ashen.vercel.app/">
+          <div class="project-logo"><img src="logos/remi-icon.svg" alt=""></div>
+          <div class="project-body">
+            <div class="project-title"><h3>Remi</h3><span class="card-arrow" aria-hidden="true">↗</span></div>
+            <p>Executive and director pay comparison dashboard; FTSE coverage is still expanding.</p>
+          </div>
+        </a>
+        <a class="project-card" href="https://crowdcallr.vercel.app/">
+          <div class="project-logo"><img src="logos/crowdcallr-icon.png" alt=""></div>
+          <div class="project-body">
+            <div class="project-title"><h3>CrowdCallr</h3><span class="card-arrow" aria-hidden="true">↗</span></div>
+            <p>Frontend research-challenge and prediction-market prototype; demo activity resets on refresh.</p>
+          </div>
+        </a>
+        <a class="project-card" href="https://asaf-cv-chatbot.vercel.app/">
+          <div class="project-logo"><img src="logos/cvchatbot-icon.png" alt=""></div>
+          <div class="project-body">
+            <div class="project-title"><h3>CV Chatbot</h3><span class="card-arrow" aria-hidden="true">↗</span></div>
+            <p>Interactive guide to my professional background and projects.</p>
+          </div>
+        </a>
+        <a class="project-card" href="https://github.com/asafrubin00/onenote2notion">
+          <div class="project-logo"><img src="logos/onenote2notion-icon.png" alt=""></div>
+          <div class="project-body">
+            <div class="project-title"><h3>OneNote2Notion</h3><span class="card-arrow" aria-hidden="true">↗</span></div>
+            <p>Staged Python migration workflow for OneNote content and images into Notion.</p>
+          </div>
+        </a>
+        <a class="project-card" href="https://vantageous.vercel.app/">
+          <div class="project-logo"><img src="logos/vantageous-icon.svg" alt=""></div>
+          <div class="project-body">
+            <div class="project-title"><h3>Vantageous</h3><span class="card-arrow" aria-hidden="true">↗</span></div>
+            <p>Market-news signals, briefings and an assumption-led valuation view.</p>
+          </div>
+        </a>
+        <div class="project-card soon">
+          <div class="project-logo" aria-hidden="true">+</div>
+          <div class="project-body">
+            <span class="soon-title">More on the way</span>
+            <span class="soon-tag">In development</span>
           </div>
         </div>
       </div>
-      <a class="scroll-cue" href="#contact" aria-label="Scroll to Contact"></a>
     </section>
 
-    <section class="section" id="contact">
-      <div class="section-inner contact-layout">
+    <section class="page page-col" id="publications">
+      <div>
+        <p class="eyebrow">Publications</p>
+        <h2>Research and thought leadership.</h2>
+      </div>
+      <div class="publications-layout">
+        <div>
+          <p class="pub-group-title">Academic Research</p>
+          <div class="publication-list">
+            <a class="publication" href="https://www.researchgate.net/publication/343735897">
+              <span class="pub-year">2020</span>
+              <span>
+                <span class="pub-title">Propensity to adopt new technologies and research productivity in a developing country context</span>
+                <span class="pub-source">International Journal of Business Innovation and Research, 22(4), 546–568</span>
+              </span>
+            </a>
+            <a class="publication" href="https://www.researchgate.net/publication/335551637">
+              <span class="pub-year">2019</span>
+              <span>
+                <span class="pub-title">Entrepreneurial orientation, technological propensity and academic research productivity</span>
+                <span class="pub-source">Heliyon, 5(8), e02328</span>
+              </span>
+            </a>
+            <a class="publication" href="https://wiredspace.wits.ac.za/items/9104408c-822e-4bf2-9330-c56c2e08ffc0">
+              <span class="pub-year">2018</span>
+              <span>
+                <span class="pub-title">Knowledge management determinants of breakthrough research productivity</span>
+                <span class="pub-source">PhD thesis, University of the Witwatersrand</span>
+              </span>
+            </a>
+          </div>
+        </div>
+        <div>
+          <p class="pub-group-title">Thought Leadership</p>
+          <div class="publication-list">
+            <a class="publication" href="https://www.russellreynolds.com/en/insights/reports-surveys/global-ceo-turnover-index">
+              <span class="pub-year">2024</span>
+              <span>
+                <span class="pub-title">Global CEO Turnover Index</span>
+                <span class="pub-source">Russell Reynolds Associates, co-author</span>
+              </span>
+            </a>
+            <a class="publication" href="https://www.russellreynolds.com/en/insights/articles/how-to-structure-an-effective-pre-ipo-board-in-the-uk">
+              <span class="pub-year">2022</span>
+              <span>
+                <span class="pub-title">How to Structure an Effective Pre-IPO Board in the UK</span>
+                <span class="pub-source">Russell Reynolds Associates, co-author</span>
+              </span>
+            </a>
+            <a class="publication" href="https://www.russellreynolds.com/en/insights/articles/the-role-of-the-senior-independent-director">
+              <span class="pub-year">2021</span>
+              <span>
+                <span class="pub-title">The Role of the Senior Independent Director (UK)</span>
+                <span class="pub-source">Russell Reynolds Associates, co-author</span>
+              </span>
+            </a>
+            <a class="publication" href="https://www.russellreynolds.com/en/insights/articles/what-makes-a-successful-board-chair-defining-their-attributes-and-transition-preparedness">
+              <span class="pub-year">2020</span>
+              <span>
+                <span class="pub-title">What Makes A Successful Board Chair?</span>
+                <span class="pub-source">Russell Reynolds Associates, co-author</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page page-col" id="contact">
+      <div class="contact-layout">
         <div class="contact-text">
-          <h2 class="section-heading-compact">Contact</h2>
+          <p class="eyebrow">Contact</p>
+          <h2>Get in touch.</h2>
           <p>For governance research, board advisory, analytics collaborations, or questions about the projects above, send a note directly.</p>
           <div class="contact-methods">
-            <a class="contact-method email-link" href="mailto:rubin.asaf01@gmail.com?subject=Website%20enquiry">
-              <img src="logos/email.png" alt="">
-              <span>rubin.asaf01@gmail.com</span>
-            </a>
-            <a class="contact-method" href="https://wa.me/447541459799">
-              <img src="logos/telephone-symbol-button.png" alt="">
-              <span>WhatsApp: +44 7541 459799</span>
-            </a>
-            <a class="contact-method" href="https://www.linkedin.com/in/asaf-rubin-phd-mba-21291466">
-              <img src="logos/linkedin.png" alt="">
-              <span>LinkedIn</span>
-            </a>
+            <a class="email-link" href="mailto:rubin.asaf01@gmail.com?subject=Website%20enquiry">rubin.asaf01@gmail.com</a>
+            <a href="https://wa.me/447541459799">WhatsApp: +44 7541 459799</a>
+            <a href="https://www.linkedin.com/in/asaf-rubin-phd-mba-21291466">LinkedIn</a>
           </div>
         </div>
         <form class="contact-form" id="contact-form">
-          <div class="field-row">
-            <p>
-              <label for="name">Name</label>
-              <input id="name" name="name" autocomplete="name">
-            </p>
-            <p>
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" autocomplete="email">
-            </p>
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" autocomplete="name">
           </div>
-          <p>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email">
+          </div>
+          <div class="full">
             <label for="subject">Subject</label>
             <input id="subject" name="subject">
-          </p>
-          <p>
+          </div>
+          <div class="full">
             <label for="message">Message</label>
             <textarea id="message" name="message"></textarea>
-          </p>
-          <div class="form-actions">
-            <button class="button primary" type="submit">Submit</button>
           </div>
-          <p class="form-status" id="form-status" aria-live="polite"></p>
+          <div class="form-actions">
+            <p class="form-status" id="form-status" aria-live="polite"></p>
+            <button class="btn" type="submit">Submit</button>
+          </div>
         </form>
       </div>
+      <footer class="footer">© 2026 Asaf Rubin &nbsp;·&nbsp; Leadership Advisory / Data Analytics / Governance Research</footer>
     </section>
   </main>
-
-  <footer class="footer">
-    <span>© 2026 Asaf Rubin</span>
-    <span>Leadership Advisory / Data Analytics / Governance Research</span>
-  </footer>
 
   <script>
     const navLinks = [...document.querySelectorAll(".nav a")];
@@ -1425,7 +920,7 @@
     function setActiveSection() {
       const viewportAnchor = window.scrollY + window.innerHeight * 0.48;
       const visible = sections.reduce((closest, section) => {
-        const distance = Math.abs(section.offsetTop - viewportAnchor);
+        const distance = Math.abs(section.offsetTop + section.offsetHeight / 2 - viewportAnchor);
         return distance < closest.distance ? { section, distance } : closest;
       }, { section: sections[0], distance: Infinity }).section;
       navLinks.forEach((link) => {
@@ -1501,7 +996,7 @@
         addChatBubble("bot", "Something broke on my side. Please try the full-screen chatbot, or send Asaf a note directly.");
       } finally {
         setChatBusy(false);
-        chatInput.focus();
+        chatInput.focus({ preventScroll: true });
       }
     }
 
@@ -1535,7 +1030,7 @@
         subjectValue ? `Subject: ${subjectValue}` : "",
         name ? `Name: ${name}` : "",
         email ? `Email: ${email}` : ""
-      ].filter(Boolean).join("\\n"));
+      ].filter(Boolean).join("\n"));
       const mailtoUrl = `mailto:rubin.asaf01@gmail.com?subject=${subject}&body=${body}`;
       const mailLink = document.createElement("a");
       mailLink.href = mailtoUrl;
